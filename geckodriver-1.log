@@ -1,0 +1,17 @@
+1693499278067	geckodriver	INFO	Listening on 127.0.0.1:63845
+1693499281142	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63846" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\DAVY~1.JON\\AppData\\Local\\Temp\\rust_mozprofileLgjuCC"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1693499281500	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1693499281605	Marionette	INFO	Listening on port 63856
+WebDriver BiDi listening on ws://127.0.0.1:63846
+Read port: 63856
+1693499281815	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:63846/devtools/browser/78f3b1e2-ac8f-40aa-abcb-7b800636ced8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://172.24.200.27:8080."
+console.error: Region.sys.mjs: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 759))
+console.error: Region.sys.mjs: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 411))
+JavaScript error: http://172.24.200.27:8080/situator-v2.min.js, line 2: Error: [$injector:nomod] http://errors.angularjs.org/1.7.9/$injector/nomod?p0=seventh.situator.view.dashboard
+1693499306285	Marionette	INFO	Stopped listening on port 63856
+Dynamically enable window occlusion 1

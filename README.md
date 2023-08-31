@@ -1,2 +1,2 @@
 # automationOperus
- Automation for the Operus software
+ Test automation - Operus
