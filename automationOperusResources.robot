@@ -11,6 +11,9 @@ ${localPassword}    seventh
 ${identifier}    JQ2I-ABXI-HAXB-EYWE
 ${localIdentifier}    Z3WW-PGGB-7QWW-EC3C
 ${localURL}    http://localhost:8080
+${standardLicenceDemonstration}    GFX2UUKXLSSYHC3WW4IVASFQ
+${standardLicence}    TLWHQKHTV5GSMW4R4R67OJQX
+${incorrectStandardLicence}    MXGDJZENU6YZOLM3OQOTUGVT
 
 *** Keywords ***
 
@@ -98,5 +101,13 @@ Licence Page
     Wait Until Element Is Visible    locator=//a[contains(.,'Licenças')]
     Element Should Be Visible    locator=//span[@class='text-bold ng-binding'][contains(.,'${identifier}')]
 
-Insert Licences
+Licence Manipulation
     Element Should Be Visible    locator=//span[@ng-show='licenses == null'][contains(.,'Nenhum registro encontrado')]
+    Click Button    locator=//button[@name='add'][contains(.,'Adicionar licença')]
+    Wait Until Element Is Visible    locator=//label[@class='control-label'][contains(.,'Licença')]
+    Input Text    locator=//input[contains(@ng-model,'license.serial')]    text=${incorrectStandardLicence}
+    Click Button    locator=//button[@class='btn btn-primary btn-save btn-new-license'][contains(.,'Adicionar')]
+    Wait Until Element Is Visible    locator=//div[@class='growl-message ng-binding'][contains(.,'A licença foi gerada para uma máquina diferente.')]
+    Input Text    locator=//input[contains(@ng-model,'license.serial')]     text=${standardLicenceDemonstration}    clear=${True}
+    Click Button    locator=//button[@class='btn btn-primary btn-save btn-new-license'][contains(.,'Adicionar')]
+    Wait Until Element Is Visible    locator=//td[@class='ng-binding'][contains(.,'STPSTD-ENT')]    timeout=30

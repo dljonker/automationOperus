@@ -24,4 +24,4 @@ Licence Tests
     [Documentation]    Esse teste verifica o licenciamento do sistema
     [Tags]    licence
     Licence Page
-    
+    Licence Manipulation
