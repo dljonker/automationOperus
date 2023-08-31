@@ -1,0 +1,20 @@
+1693502943545	geckodriver	INFO	Listening on 127.0.0.1:65085
+1693502946622	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65086" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\DAVY~1.JON\\AppData\\Local\\Temp\\rust_mozprofileuumr4Y"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1693502946913	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1693502947019	Marionette	INFO	Listening on port 65096
+WebDriver BiDi listening on ws://127.0.0.1:65086
+Read port: 65096
+1693502947204	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:65086/devtools/browser/8f12e3e2-b6a6-4982-8e2e-faed44844b9f
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+JavaScript error: http://localhost:8080/situator-v2.min.js, line 2: Error: [$injector:nomod] http://errors.angularjs.org/1.7.9/$injector/nomod?p0=seventh.situator.view.dashboard
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+1693502952633	Marionette	INFO	Stopped listening on port 65096
+JavaScript warning: http://localhost:8080/situator-v2.min.js, line 2: Script terminated by timeout at:
+$evalAsync@http://localhost:8080/situator-v2.min.js:2:530062
+gt/this.$get</</</v.$$intervalId<@http://localhost:8080/situator-v2.min.js:2:511543
+
+Dynamically enable window occlusion 1
