@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230904 09:06:31.264" rpa="false" schemaversion="4">
+<suite id="s1" name="automationOperus" source="c:\Users\davy.jonker\Documents\GitHub\automationOperus\automationOperus.robot">
+<test id="s1-t1" name="Login Tests" line="10">
+<kw name="Start Browser" library="automationOperusResources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230904 09:06:31.989" level="INFO">Opening browser 'Firefox' to base url 'None'.</msg>
+<status status="PASS" starttime="20230904 09:06:31.989" endtime="20230904 09:06:39.768"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230904 09:06:39.769" endtime="20230904 09:06:40.055"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:31.988" endtime="20230904 09:06:40.055"/>
+</kw>
+<kw name="Login Page" library="automationOperusResources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230904 09:06:40.057" level="INFO">Opening url 'http://172.24.200.27:8080'</msg>
+<status status="PASS" starttime="20230904 09:06:40.056" endtime="20230904 09:06:42.051"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230904 09:06:42.052" endtime="20230904 09:06:42.139"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:40.056" endtime="20230904 09:06:42.139"/>
+</kw>
+<kw name="Empty Credentials" library="automationOperusResources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//input[@class='btn btn-default btn-login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:42.142" level="INFO">Clicking button '//input[@class='btn btn-default btn-login']'.</msg>
+<status status="PASS" starttime="20230904 09:06:42.141" endtime="20230904 09:06:42.385"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[@ng-show='errors'][contains(.,'Login inválido.')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230904 09:06:42.442" level="INFO">Element '//div[@ng-show='errors'][contains(.,'Login inválido.')]' is displayed.</msg>
+<status status="PASS" starttime="20230904 09:06:42.387" endtime="20230904 09:06:42.443"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:42.140" endtime="20230904 09:06:42.443"/>
+</kw>
+<kw name="Empty Username" library="automationOperusResources">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230904 09:06:42.445" endtime="20230904 09:06:43.616"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230904 09:06:43.617" endtime="20230904 09:06:43.642"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='password']</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:43.643" level="INFO">Typing text 'Sentinell' into text field '//input[@name='password']'.</msg>
+<status status="PASS" starttime="20230904 09:06:43.642" endtime="20230904 09:06:43.667"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//input[@class='btn btn-default btn-login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:43.668" level="INFO">Clicking button '//input[@class='btn btn-default btn-login']'.</msg>
+<status status="PASS" starttime="20230904 09:06:43.667" endtime="20230904 09:06:43.887"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[@ng-show='errors'][contains(.,'Login inválido.')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230904 09:06:43.900" level="INFO">Element '//div[@ng-show='errors'][contains(.,'Login inválido.')]' is displayed.</msg>
+<status status="PASS" starttime="20230904 09:06:43.887" endtime="20230904 09:06:43.900"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:42.444" endtime="20230904 09:06:43.900"/>
+</kw>
+<kw name="Empty Password" library="automationOperusResources">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230904 09:06:43.901" endtime="20230904 09:06:44.657"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230904 09:06:44.658" endtime="20230904 09:06:44.684"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<arg>text=${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:44.685" level="INFO">Typing text 'admin' into text field '//input[@name='userName']'.</msg>
+<status status="PASS" starttime="20230904 09:06:44.684" endtime="20230904 09:06:44.712"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//input[@class='btn btn-default btn-login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:44.713" level="INFO">Clicking button '//input[@class='btn btn-default btn-login']'.</msg>
+<status status="PASS" starttime="20230904 09:06:44.712" endtime="20230904 09:06:44.944"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[@ng-show='errors'][contains(.,'Login inválido.')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230904 09:06:44.957" level="INFO">Element '//div[@ng-show='errors'][contains(.,'Login inválido.')]' is displayed.</msg>
+<status status="PASS" starttime="20230904 09:06:44.945" endtime="20230904 09:06:44.957"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:43.901" endtime="20230904 09:06:44.957"/>
+</kw>
+<kw name="Wrong Credentials" library="automationOperusResources">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230904 09:06:44.958" endtime="20230904 09:06:45.533"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230904 09:06:45.534" endtime="20230904 09:06:45.562"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<arg>text=username@user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:45.563" level="INFO">Typing text 'username@user' into text field '//input[@name='userName']'.</msg>
+<status status="PASS" starttime="20230904 09:06:45.562" endtime="20230904 09:06:45.595"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='password']</arg>
+<arg>text=Password@2023</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:45.596" level="INFO">Typing text 'Password@2023' into text field '//input[@name='password']'.</msg>
+<status status="PASS" starttime="20230904 09:06:45.596" endtime="20230904 09:06:45.618"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//input[@class='btn btn-default btn-login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:45.618" level="INFO">Clicking button '//input[@class='btn btn-default btn-login']'.</msg>
+<status status="PASS" starttime="20230904 09:06:45.618" endtime="20230904 09:06:45.858"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[@ng-show='errors'][contains(.,'Login inválido.')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230904 09:06:45.885" level="INFO">Element '//div[@ng-show='errors'][contains(.,'Login inválido.')]' is displayed.</msg>
+<status status="PASS" starttime="20230904 09:06:45.859" endtime="20230904 09:06:45.885"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:44.958" endtime="20230904 09:06:45.885"/>
+</kw>
+<kw name="Wrong User" library="automationOperusResources">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230904 09:06:45.889" endtime="20230904 09:06:46.394"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230904 09:06:46.394" endtime="20230904 09:06:46.414"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<arg>text=username@user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:46.415" level="INFO">Typing text 'username@user' into text field '//input[@name='userName']'.</msg>
+<status status="PASS" starttime="20230904 09:06:46.414" endtime="20230904 09:06:46.443"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='password']</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:46.443" level="INFO">Typing text 'Sentinell' into text field '//input[@name='password']'.</msg>
+<status status="PASS" starttime="20230904 09:06:46.443" endtime="20230904 09:06:46.464"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//input[@class='btn btn-default btn-login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:46.464" level="INFO">Clicking button '//input[@class='btn btn-default btn-login']'.</msg>
+<status status="PASS" starttime="20230904 09:06:46.464" endtime="20230904 09:06:46.729"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[@ng-show='errors'][contains(.,'Login inválido.')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230904 09:06:46.754" level="INFO">Element '//div[@ng-show='errors'][contains(.,'Login inválido.')]' is displayed.</msg>
+<status status="PASS" starttime="20230904 09:06:46.730" endtime="20230904 09:06:46.754"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:45.888" endtime="20230904 09:06:46.755"/>
+</kw>
+<kw name="Wrong Password" library="automationOperusResources">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230904 09:06:46.756" endtime="20230904 09:06:47.284"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230904 09:06:47.285" endtime="20230904 09:06:47.318"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<arg>text=${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:47.319" level="INFO">Typing text 'admin' into text field '//input[@name='userName']'.</msg>
+<status status="PASS" starttime="20230904 09:06:47.318" endtime="20230904 09:06:47.342"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='password']</arg>
+<arg>text=123456987@@2023</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:47.343" level="INFO">Typing text '123456987@@2023' into text field '//input[@name='password']'.</msg>
+<status status="PASS" starttime="20230904 09:06:47.342" endtime="20230904 09:06:47.366"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//input[@class='btn btn-default btn-login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:47.366" level="INFO">Clicking button '//input[@class='btn btn-default btn-login']'.</msg>
+<status status="PASS" starttime="20230904 09:06:47.366" endtime="20230904 09:06:47.598"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[@ng-show='errors'][contains(.,'Login inválido.')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230904 09:06:47.633" level="INFO">Element '//div[@ng-show='errors'][contains(.,'Login inválido.')]' is displayed.</msg>
+<status status="PASS" starttime="20230904 09:06:47.598" endtime="20230904 09:06:47.634"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:46.755" endtime="20230904 09:06:47.634"/>
+</kw>
+<kw name="Uppercase Password" library="automationOperusResources">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230904 09:06:47.636" endtime="20230904 09:06:48.426"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230904 09:06:48.426" endtime="20230904 09:06:48.447"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<arg>text=${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:48.449" level="INFO">Typing text 'admin' into text field '//input[@name='userName']'.</msg>
+<status status="PASS" starttime="20230904 09:06:48.447" endtime="20230904 09:06:48.468"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='password']</arg>
+<arg>text=SENTINELL</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:48.469" level="INFO">Typing text 'SENTINELL' into text field '//input[@name='password']'.</msg>
+<status status="PASS" starttime="20230904 09:06:48.468" endtime="20230904 09:06:48.493"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//input[@class='btn btn-default btn-login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:48.494" level="INFO">Clicking button '//input[@class='btn btn-default btn-login']'.</msg>
+<status status="PASS" starttime="20230904 09:06:48.493" endtime="20230904 09:06:48.729"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[@ng-show='errors'][contains(.,'Login inválido.')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230904 09:06:48.774" level="INFO">Element '//div[@ng-show='errors'][contains(.,'Login inválido.')]' is displayed.</msg>
+<status status="PASS" starttime="20230904 09:06:48.730" endtime="20230904 09:06:48.775"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:47.635" endtime="20230904 09:06:48.775"/>
+</kw>
+<kw name="Correct Login" library="automationOperusResources">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230904 09:06:48.777" endtime="20230904 09:06:49.355"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230904 09:06:49.355" endtime="20230904 09:06:49.393"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<arg>text=${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:49.394" level="INFO">Typing text 'admin' into text field '//input[@name='userName']'.</msg>
+<status status="PASS" starttime="20230904 09:06:49.393" endtime="20230904 09:06:49.418"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='password']</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:49.420" level="INFO">Typing text 'Sentinell' into text field '//input[@name='password']'.</msg>
+<status status="PASS" starttime="20230904 09:06:49.419" endtime="20230904 09:06:49.442"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//input[@class='btn btn-default btn-login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230904 09:06:49.442" level="INFO">Clicking button '//input[@class='btn btn-default btn-login']'.</msg>
+<status status="PASS" starttime="20230904 09:06:49.442" endtime="20230904 09:06:51.675"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[@class='section-header'][contains(.,'Atendimento')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230904 09:06:51.675" endtime="20230904 09:06:51.721"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:48.777" endtime="20230904 09:06:51.721"/>
+</kw>
+<kw name="Stop Browser" library="automationOperusResources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230904 09:06:51.888" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230904 09:06:51.722" endtime="20230904 09:06:51.888"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230904 09:06:51.889" endtime="20230904 09:06:54.918"/>
+</kw>
+<status status="PASS" starttime="20230904 09:06:51.722" endtime="20230904 09:06:54.918"/>
+</kw>
+<doc>Este teste verifica a tela de login do sistema.</doc>
+<tag>login</tag>
+<status status="PASS" starttime="20230904 09:06:31.988" endtime="20230904 09:06:54.919"/>
+</test>
+<doc>Essa suite testa o Operus</doc>
+<status status="PASS" starttime="20230904 09:06:31.278" endtime="20230904 09:06:54.920"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">login</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="automationOperus">automationOperus</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
