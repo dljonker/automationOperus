@@ -124,15 +124,17 @@ Licence Manipulation
 
 Account Access Page "${AccountCode}"
     ${Title}    Get Location
-    ${xablau}    Should Be Equal As Strings    ${Title}    ${URL}/app/login    values=True
-    IF    ${xablau} == True
+    ${sefude}    Set Variable    http://172.24.200.27:8080/app/login
+    IF    $Title == $sefude
         Correct Login
+        Go To    url=${URL}/app/v2/accounts/${AccountCode}/account-access
     ELSE
         Go To    url=${URL}/app/v2/accounts/${AccountCode}/account-access
     END    
     
 
 TimeSchedule Tab
+    Wait Until Element Is Visible    locator=//li[@class='tabs-grid-item tabs-number-3'][contains(.,'HORÁRIOS')]
     Click Element    locator=//li[@class='tabs-grid-item tabs-number-3'][contains(.,'HORÁRIOS')]
 
 Add TimeSchedule
