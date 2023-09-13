@@ -98,6 +98,7 @@ Correct Login Local
     Input Text    locator=//input[@name='userName']    text=${localUsername}
     Input Text    locator=//input[@name='password']   text=${localPassword}
     Click Button    locator=//input[@class='btn btn-default btn-login']
+    Wait Until Element Is Visible    locator=//div[@class='section-header'][contains(.,'Atendimento')]
 Licence Page
     Login Page Local
     Correct Login Local
@@ -124,12 +125,12 @@ Licence Manipulation
 
 Account Access Page "${AccountCode}"
     ${Title}    Get Location
-    ${sefude}    Set Variable    http://172.24.200.27:8080/app/login
-    IF    $Title == $sefude
-        Correct Login
-        Go To    url=${URL}/app/v2/accounts/${AccountCode}/account-access
+    ${Comparation}    Set Variable    http://localhost:8080/app/login
+    IF    $Title == $Comparation
+        Correct Login Local
+        Go To    url=${localURL}/app/v2/accounts/${AccountCode}/account-access
     ELSE
-        Go To    url=${URL}/app/v2/accounts/${AccountCode}/account-access
+        Go To    url=${localURL}/app/v2/accounts/${AccountCode}/account-access
     END    
     
 
@@ -142,15 +143,17 @@ Add TimeSchedule
     Input Text    locator=//input[contains(@name,'name')]    text=Tabela de testes
     Input Text    locator=//input[contains(@name,'description')]    text=Tabela para testes automatizados
     Click Element    locator=//input[contains(@ng-model,'selectedDays.mondaySchedules')]
-    Input Text    locator=//input[contains(@ng-model,'fromTime')]    text=1200
-    Input Text    locator=//input[contains(@ng-model,'toTime')]    text=1300
-    Click Element    locator=//button[@type='button'][contains(.,'Incluir')]
-    Element Should Be Visible    locator=//span[@class='label label-g-scope'][contains(.,'12:00 às 13:00')]lg label-primary mx-1 ng-binding n
-    Click Button    locator=//input[contains(@ng-model,'selectedDays.holiday1Schedules')]
-    Input Text    locator=//input[contains(@ng-model,'fromTime')]    text=1300    clear=True
-    Input Text    locator=//input[contains(@ng-model,'toTime')]    text=1500    clear=True
-    Click Element    locator=//input[contains(@ng-model,'selectedDays.mondaySchedules')]
-    Click Element    locator=//button[@type='button'][contains(.,'Incluir')]
+    Click Element    locator=//input[contains(@ng-model,'fromTime')]
+    Press Keys    none    1200
+    Click Element    locator=//input[contains(@ng-model,'toTime')]
+    Press Keys    none    1300
+    Click Button    locator=//button[@type='button'][contains(.,'Incluir')]
+    Click Element    locator=//input[contains(@ng-model,'selectedDays.holiday1Schedules')]
+    Click Element    locator=//input[contains(@ng-model,'fromTime')]
+    Press Keys    none    1300
+    Click Element    locator=//input[contains(@ng-model,'toTime')]
+    Press Keys    none    1500
+    Click Button    locator=//button[@type='button'][contains(.,'Incluir')]
     Element Should Be Visible    locator=//div[@class='custom-td-alignment ng-binding'][contains(.,'Segunda-feira')]
     Element Should Be Visible    locator=//div[@class='custom-td-alignment ng-binding'][contains(.,'Feriado 1')]
     Element Should Be Visible    locator=//span[@class='label label-lg label-primary mx-1 ng-binding ng-scope'][contains(.,'12:00 às 13:00')]
