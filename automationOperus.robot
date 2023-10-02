@@ -35,3 +35,8 @@ Account TimeSchedule Tests
     Account Access Page "1000"
     TimeSchedule Tab
     Add TimeSchedule
+    Editar tabela de horário
+    Validar limite de 3 horários
+    Validar faixas conflitantes
+    Validar botão de cancelar
+    Remover tabela de horário
