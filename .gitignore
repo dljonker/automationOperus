@@ -1,1 +1,6 @@
 *.log
+*.png
+output.xml
+report.html
+log.html
+automationOperusResources.robot

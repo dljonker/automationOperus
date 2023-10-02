@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20231002 11:38:45.085" rpa="false" schemaversion="4">
+<suite id="s1" name="automationOperus" source="c:\Users\davy.jonker\Documents\GitHub\automationOperus\automationOperus.robot">
+<test id="s1-t1" name="Account TimeSchedule Tests" line="30">
+<kw name="Start Browser" library="automationOperusResources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231002 11:38:45.747" level="INFO">Opening browser 'Firefox' to base url 'None'.</msg>
+<status status="PASS" starttime="20231002 11:38:45.744" endtime="20231002 11:38:52.000"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231002 11:38:52.001" endtime="20231002 11:38:52.273"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:45.741" endtime="20231002 11:38:52.274"/>
+</kw>
+<kw name="Login Page Local" library="automationOperusResources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${localURL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231002 11:38:52.278" level="INFO">Opening url 'http://localhost:8080'</msg>
+<status status="PASS" starttime="20231002 11:38:52.277" endtime="20231002 11:38:52.532"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231002 11:38:52.533" endtime="20231002 11:38:52.568"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:52.275" endtime="20231002 11:38:52.569"/>
+</kw>
+<kw name="Account Access Page &quot;1000&quot;" library="automationOperusResources" sourcename="Account Access Page &quot;${AccountCode}&quot;">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${Title}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231002 11:38:52.578" level="INFO">${Title} = http://localhost:8080/app/login</msg>
+<status status="PASS" starttime="20231002 11:38:52.573" endtime="20231002 11:38:52.579"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Comparation}</var>
+<arg>http://localhost:8080/app/login</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231002 11:38:52.583" level="INFO">${Comparation} = http://localhost:8080/app/login</msg>
+<status status="PASS" starttime="20231002 11:38:52.581" endtime="20231002 11:38:52.584"/>
+</kw>
+<if>
+<branch type="IF" condition="$Title == $Comparation">
+<kw name="Correct Login Local" library="automationOperusResources">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20231002 11:38:52.605" endtime="20231002 11:38:52.724"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231002 11:38:52.725" endtime="20231002 11:38:52.744"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='userName']</arg>
+<arg>text=${localUsername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:52.748" level="INFO">Typing text 'admin' into text field '//input[@name='userName']'.</msg>
+<status status="PASS" starttime="20231002 11:38:52.746" endtime="20231002 11:38:52.824"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@name='password']</arg>
+<arg>text=${localPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:52.829" level="INFO">Typing text 'seventh' into text field '//input[@name='password']'.</msg>
+<status status="PASS" starttime="20231002 11:38:52.824" endtime="20231002 11:38:52.866"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//input[@class='btn btn-default btn-login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:52.872" level="INFO">Clicking button '//input[@class='btn btn-default btn-login']'.</msg>
+<status status="PASS" starttime="20231002 11:38:52.868" endtime="20231002 11:38:54.137"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[@class='section-header'][contains(.,'Atendimento')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231002 11:38:54.141" endtime="20231002 11:38:54.275"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:52.603" endtime="20231002 11:38:54.276"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${localURL}/app/v2/accounts/${AccountCode}/account-access</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231002 11:38:54.282" level="INFO">Opening url 'http://localhost:8080/app/v2/accounts/1000/account-access'</msg>
+<status status="PASS" starttime="20231002 11:38:54.278" endtime="20231002 11:38:55.520"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:52.585" endtime="20231002 11:38:55.522"/>
+</branch>
+<branch type="ELSE">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${localURL}/app/v2/accounts/${AccountCode}/account-access</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20231002 11:38:55.528" endtime="20231002 11:38:55.531"/>
+</kw>
+<status status="NOT RUN" starttime="20231002 11:38:55.524" endtime="20231002 11:38:55.533"/>
+</branch>
+<status status="PASS" starttime="20231002 11:38:52.585" endtime="20231002 11:38:55.535"/>
+</if>
+<status status="PASS" starttime="20231002 11:38:52.570" endtime="20231002 11:38:55.537"/>
+</kw>
+<kw name="TimeSchedule Tab" library="automationOperusResources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//li[@class='tabs-grid-item tabs-number-3'][contains(.,'HORÁRIOS')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231002 11:38:55.550" endtime="20231002 11:38:55.859"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//li[@class='tabs-grid-item tabs-number-3'][contains(.,'HORÁRIOS')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:55.867" level="INFO">Clicking element '//li[@class='tabs-grid-item tabs-number-3'][contains(.,'HORÁRIOS')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:55.861" endtime="20231002 11:38:56.123"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:55.543" endtime="20231002 11:38:56.125"/>
+</kw>
+<kw name="Add TimeSchedule" library="automationOperusResources">
+<kw name="Remover tabela de horário" library="automationOperusResources">
+<kw name="Set Variable" library="BuiltIn">
+<var>${Presente}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231002 11:38:56.141" level="INFO">${Presente} = True</msg>
+<status status="PASS" starttime="20231002 11:38:56.138" endtime="20231002 11:38:56.143"/>
+</kw>
+<while condition="${Presente} is True">
+<iter>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Presente}</var>
+<arg>Verificar se as tabelas existem</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Verificar se as tabelas existem" library="automationOperusResources">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=(//a[@title='Excluir'])</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:38:56.235" level="INFO">Element '(//a[@title='Excluir'])' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:38:56.161" endtime="20231002 11:38:56.237"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:56.158" endtime="20231002 11:38:56.238"/>
+</kw>
+<msg timestamp="20231002 11:38:56.241" level="INFO">${Presente} = True</msg>
+<status status="PASS" starttime="20231002 11:38:56.154" endtime="20231002 11:38:56.242"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Presente} is True</arg>
+<arg>Apagar tabelas</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Apagar tabelas" library="automationOperusResources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=(//a[@title='Excluir'])</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:56.253" level="INFO">Clicking element '(//a[@title='Excluir'])'.</msg>
+<status status="PASS" starttime="20231002 11:38:56.249" endtime="20231002 11:38:56.523"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary btn-save'][contains(.,'Confirmar')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231002 11:38:56.524" endtime="20231002 11:38:56.553"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary btn-save'][contains(.,'Confirmar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:56.557" level="INFO">Clicking button '//button[@class='btn btn-primary btn-save'][contains(.,'Confirmar')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:56.555" endtime="20231002 11:38:56.806"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:56.247" endtime="20231002 11:38:56.807"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:56.244" endtime="20231002 11:38:56.808"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Presente} is False</arg>
+<arg>Log</arg>
+<arg>message=Is False</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231002 11:38:56.808" endtime="20231002 11:38:56.810"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:56.145" endtime="20231002 11:38:56.810"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Presente}</var>
+<arg>Verificar se as tabelas existem</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Verificar se as tabelas existem" library="automationOperusResources">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=(//a[@title='Excluir'])</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:38:56.881" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-80.png"&gt;&lt;img src="selenium-screenshot-80.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231002 11:38:56.882" level="FAIL">Element with locator '(//a[@title='Excluir'])' not found.</msg>
+<status status="FAIL" starttime="20231002 11:38:56.814" endtime="20231002 11:38:56.890"/>
+</kw>
+<status status="FAIL" starttime="20231002 11:38:56.813" endtime="20231002 11:38:56.891"/>
+</kw>
+<msg timestamp="20231002 11:38:56.892" level="INFO">${Presente} = False</msg>
+<status status="PASS" starttime="20231002 11:38:56.812" endtime="20231002 11:38:56.892"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Presente} is True</arg>
+<arg>Apagar tabelas</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231002 11:38:56.893" endtime="20231002 11:38:56.894"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Presente} is False</arg>
+<arg>Log</arg>
+<arg>message=Is False</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>message=Is False</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231002 11:38:56.897" level="INFO">Is False</msg>
+<status status="PASS" starttime="20231002 11:38:56.896" endtime="20231002 11:38:56.898"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:56.895" endtime="20231002 11:38:56.898"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:56.811" endtime="20231002 11:38:56.899"/>
+</iter>
+<status status="PASS" starttime="20231002 11:38:56.145" endtime="20231002 11:38:56.899"/>
+</while>
+<status status="PASS" starttime="20231002 11:38:56.134" endtime="20231002 11:38:56.900"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@name='add'][contains(.,'Adicionar horário')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:56.902" level="INFO">Clicking button '//button[@name='add'][contains(.,'Adicionar horário')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:56.901" endtime="20231002 11:38:57.129"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[contains(@name,'name')]</arg>
+<arg>text=Tabela de testes</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:57.133" level="INFO">Typing text 'Tabela de testes' into text field '//input[contains(@name,'name')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:57.130" endtime="20231002 11:38:57.184"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[contains(@name,'description')]</arg>
+<arg>text=Tabela para testes automatizados</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:57.188" level="INFO">Typing text 'Tabela para testes automatizados' into text field '//input[contains(@name,'description')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:57.186" endtime="20231002 11:38:57.264"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'selectedDays.mondaySchedules')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:57.267" level="INFO">Clicking element '//input[contains(@ng-model,'selectedDays.mondaySchedules')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:57.265" endtime="20231002 11:38:57.495"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'fromTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:57.499" level="INFO">Clicking element '//input[contains(@ng-model,'fromTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:57.496" endtime="20231002 11:38:57.718"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>1200</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:38:57.721" level="INFO">Sending key(s) ('1200',) to page.</msg>
+<msg timestamp="20231002 11:38:57.722" level="INFO">Sending keys 1200</msg>
+<status status="PASS" starttime="20231002 11:38:57.719" endtime="20231002 11:38:57.740"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'toTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:57.743" level="INFO">Clicking element '//input[contains(@ng-model,'toTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:57.741" endtime="20231002 11:38:57.962"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>1300</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:38:57.966" level="INFO">Sending key(s) ('1300',) to page.</msg>
+<msg timestamp="20231002 11:38:57.966" level="INFO">Sending keys 1300</msg>
+<status status="PASS" starttime="20231002 11:38:57.963" endtime="20231002 11:38:57.986"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='button'][contains(.,'Incluir')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:57.989" level="INFO">Clicking button '//button[@type='button'][contains(.,'Incluir')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:57.987" endtime="20231002 11:38:58.228"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'selectedDays.holiday1Schedules')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:58.236" level="INFO">Clicking element '//input[contains(@ng-model,'selectedDays.holiday1Schedules')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:58.230" endtime="20231002 11:38:58.482"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'fromTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:58.491" level="INFO">Clicking element '//input[contains(@ng-model,'fromTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:58.485" endtime="20231002 11:38:58.746"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>1300</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:38:58.755" level="INFO">Sending key(s) ('1300',) to page.</msg>
+<msg timestamp="20231002 11:38:58.756" level="INFO">Sending keys 1300</msg>
+<status status="PASS" starttime="20231002 11:38:58.748" endtime="20231002 11:38:58.817"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'toTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:58.826" level="INFO">Clicking element '//input[contains(@ng-model,'toTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:58.820" endtime="20231002 11:38:59.075"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>1500</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:38:59.084" level="INFO">Sending key(s) ('1500',) to page.</msg>
+<msg timestamp="20231002 11:38:59.085" level="INFO">Sending keys 1500</msg>
+<status status="PASS" starttime="20231002 11:38:59.077" endtime="20231002 11:38:59.184"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='button'][contains(.,'Incluir')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:59.198" level="INFO">Clicking button '//button[@type='button'][contains(.,'Incluir')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:59.188" endtime="20231002 11:38:59.477"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[@class='custom-td-alignment ng-binding'][contains(.,'Segunda-feira')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:38:59.533" level="INFO">Element '//div[@class='custom-td-alignment ng-binding'][contains(.,'Segunda-feira')]' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:38:59.480" endtime="20231002 11:38:59.535"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[@class='custom-td-alignment ng-binding'][contains(.,'Feriado 1')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:38:59.590" level="INFO">Element '//div[@class='custom-td-alignment ng-binding'][contains(.,'Feriado 1')]' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:38:59.537" endtime="20231002 11:38:59.592"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//span[@class='label label-lg label-primary mx-1 ng-binding ng-scope'][contains(.,'12:00 às 13:00')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:38:59.646" level="INFO">Element '//span[@class='label label-lg label-primary mx-1 ng-binding ng-scope'][contains(.,'12:00 às 13:00')]' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:38:59.594" endtime="20231002 11:38:59.648"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//span[@class='label label-lg label-primary mx-1 ng-binding ng-scope'][contains(.,'13:00 às 15:00')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:38:59.704" level="INFO">Element '//span[@class='label label-lg label-primary mx-1 ng-binding ng-scope'][contains(.,'13:00 às 15:00')]' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:38:59.650" endtime="20231002 11:38:59.706"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary btn-save'][contains(.,'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:38:59.715" level="INFO">Clicking button '//button[@class='btn btn-primary btn-save'][contains(.,'Salvar')]'.</msg>
+<status status="PASS" starttime="20231002 11:38:59.708" endtime="20231002 11:38:59.998"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//td[@class='ng-binding'][contains(.,'Tabela de testes')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:39:00.099" level="INFO">Element '//td[@class='ng-binding'][contains(.,'Tabela de testes')]' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:39:00.001" endtime="20231002 11:39:00.101"/>
+</kw>
+<status status="PASS" starttime="20231002 11:38:56.129" endtime="20231002 11:39:00.103"/>
+</kw>
+<kw name="Editar tabela de horário" library="automationOperusResources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//a[@title='Editar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:00.122" level="INFO">Clicking element '//a[@title='Editar']'.</msg>
+<status status="PASS" starttime="20231002 11:39:00.114" endtime="20231002 11:39:00.416"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'selectedDays.fridaySchedules')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:00.429" level="INFO">Clicking element '//input[contains(@ng-model,'selectedDays.fridaySchedules')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:00.418" endtime="20231002 11:39:00.710"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'fromTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:00.713" level="INFO">Clicking element '//input[contains(@ng-model,'fromTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:00.711" endtime="20231002 11:39:00.951"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>1700</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:00.965" level="INFO">Sending key(s) ('1700',) to page.</msg>
+<msg timestamp="20231002 11:39:00.968" level="INFO">Sending keys 1700</msg>
+<status status="PASS" starttime="20231002 11:39:00.954" endtime="20231002 11:39:01.030"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'toTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:01.038" level="INFO">Clicking element '//input[contains(@ng-model,'toTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:01.033" endtime="20231002 11:39:01.284"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>1900</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:01.295" level="INFO">Sending key(s) ('1900',) to page.</msg>
+<msg timestamp="20231002 11:39:01.297" level="INFO">Sending keys 1900</msg>
+<status status="PASS" starttime="20231002 11:39:01.287" endtime="20231002 11:39:01.496"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='button'][contains(.,'Incluir')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:01.500" level="INFO">Clicking button '//button[@type='button'][contains(.,'Incluir')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:01.497" endtime="20231002 11:39:01.748"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:00.107" endtime="20231002 11:39:01.750"/>
+</kw>
+<kw name="Validar limite de 3 horários" library="automationOperusResources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'fromTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:01.765" level="INFO">Clicking element '//input[contains(@ng-model,'fromTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:01.758" endtime="20231002 11:39:02.036"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>1900</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:02.045" level="INFO">Sending key(s) ('1900',) to page.</msg>
+<msg timestamp="20231002 11:39:02.047" level="INFO">Sending keys 1900</msg>
+<status status="PASS" starttime="20231002 11:39:02.038" endtime="20231002 11:39:02.102"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'toTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:02.110" level="INFO">Clicking element '//input[contains(@ng-model,'toTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:02.104" endtime="20231002 11:39:02.361"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>2000</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:02.371" level="INFO">Sending key(s) ('2000',) to page.</msg>
+<msg timestamp="20231002 11:39:02.373" level="INFO">Sending keys 2000</msg>
+<status status="PASS" starttime="20231002 11:39:02.364" endtime="20231002 11:39:02.420"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='button'][contains(.,'Incluir')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:02.429" level="INFO">Clicking button '//button[@type='button'][contains(.,'Incluir')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:02.422" endtime="20231002 11:39:02.708"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'fromTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:02.717" level="INFO">Clicking element '//input[contains(@ng-model,'fromTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:02.710" endtime="20231002 11:39:02.972"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>2000</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:02.982" level="INFO">Sending key(s) ('2000',) to page.</msg>
+<msg timestamp="20231002 11:39:02.984" level="INFO">Sending keys 2000</msg>
+<status status="PASS" starttime="20231002 11:39:02.975" endtime="20231002 11:39:03.033"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'toTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:03.041" level="INFO">Clicking element '//input[contains(@ng-model,'toTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:03.035" endtime="20231002 11:39:03.288"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>2100</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:03.298" level="INFO">Sending key(s) ('2100',) to page.</msg>
+<msg timestamp="20231002 11:39:03.301" level="INFO">Sending keys 2100</msg>
+<status status="PASS" starttime="20231002 11:39:03.291" endtime="20231002 11:39:03.347"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='button'][contains(.,'Incluir')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:03.355" level="INFO">Clicking button '//button[@type='button'][contains(.,'Incluir')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:03.349" endtime="20231002 11:39:03.713"/>
+</kw>
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'selectedDays.fridaySchedules')]</arg>
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<status status="PASS" starttime="20231002 11:39:03.715" endtime="20231002 11:39:03.785"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary btn-save'][contains(.,'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:03.794" level="INFO">Clicking button '//button[@class='btn btn-primary btn-save'][contains(.,'Salvar')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:03.788" endtime="20231002 11:39:04.073"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//td[@class='ng-binding'][contains(.,'Tabela de testes')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:39:04.147" level="INFO">Element '//td[@class='ng-binding'][contains(.,'Tabela de testes')]' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:39:04.076" endtime="20231002 11:39:04.149"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:01.754" endtime="20231002 11:39:04.151"/>
+</kw>
+<kw name="Validar faixas conflitantes" library="automationOperusResources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//a[@title='Editar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:04.167" level="INFO">Clicking element '//a[@title='Editar']'.</msg>
+<status status="PASS" starttime="20231002 11:39:04.160" endtime="20231002 11:39:04.590"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'selectedDays.mondaySchedules')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:04.602" level="INFO">Clicking element '//input[contains(@ng-model,'selectedDays.mondaySchedules')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:04.594" endtime="20231002 11:39:04.861"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'fromTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:04.870" level="INFO">Clicking element '//input[contains(@ng-model,'fromTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:04.864" endtime="20231002 11:39:05.118"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>1230</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:05.128" level="INFO">Sending key(s) ('1230',) to page.</msg>
+<msg timestamp="20231002 11:39:05.130" level="INFO">Sending keys 1230</msg>
+<status status="PASS" starttime="20231002 11:39:05.121" endtime="20231002 11:39:05.193"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'toTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:05.204" level="INFO">Clicking element '//input[contains(@ng-model,'toTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:05.197" endtime="20231002 11:39:05.452"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>2000</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:05.462" level="INFO">Sending key(s) ('2000',) to page.</msg>
+<msg timestamp="20231002 11:39:05.464" level="INFO">Sending keys 2000</msg>
+<status status="PASS" starttime="20231002 11:39:05.455" endtime="20231002 11:39:05.516"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='button'][contains(.,'Incluir')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:05.533" level="INFO">Clicking button '//button[@type='button'][contains(.,'Incluir')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:05.521" endtime="20231002 11:39:05.837"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//strong[contains(.,'Conflito de horário')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:39:05.880" level="INFO">Element '//strong[contains(.,'Conflito de horário')]' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:39:05.840" endtime="20231002 11:39:05.881"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary btn-save'][contains(.,'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:05.885" level="INFO">Clicking button '//button[@class='btn btn-primary btn-save'][contains(.,'Salvar')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:05.882" endtime="20231002 11:39:06.152"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//td[@class='ng-binding'][contains(.,'Tabela de testes')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:39:06.211" level="INFO">Element '//td[@class='ng-binding'][contains(.,'Tabela de testes')]' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:39:06.155" endtime="20231002 11:39:06.213"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:04.155" endtime="20231002 11:39:06.215"/>
+</kw>
+<kw name="Validar botão de cancelar" library="automationOperusResources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//a[@title='Editar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:06.231" level="INFO">Clicking element '//a[@title='Editar']'.</msg>
+<status status="PASS" starttime="20231002 11:39:06.224" endtime="20231002 11:39:06.643"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'selectedDays.mondaySchedules')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:06.657" level="INFO">Clicking element '//input[contains(@ng-model,'selectedDays.mondaySchedules')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:06.648" endtime="20231002 11:39:06.932"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'fromTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:06.940" level="INFO">Clicking element '//input[contains(@ng-model,'fromTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:06.934" endtime="20231002 11:39:07.196"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>0130</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:07.206" level="INFO">Sending key(s) ('0130',) to page.</msg>
+<msg timestamp="20231002 11:39:07.209" level="INFO">Sending keys 0130</msg>
+<status status="PASS" starttime="20231002 11:39:07.199" endtime="20231002 11:39:07.271"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'toTime')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:07.281" level="INFO">Clicking element '//input[contains(@ng-model,'toTime')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:07.274" endtime="20231002 11:39:07.527"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>0200</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231002 11:39:07.539" level="INFO">Sending key(s) ('0200',) to page.</msg>
+<msg timestamp="20231002 11:39:07.541" level="INFO">Sending keys 0200</msg>
+<status status="PASS" starttime="20231002 11:39:07.530" endtime="20231002 11:39:07.596"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='button'][contains(.,'Incluir')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:07.604" level="INFO">Clicking button '//button[@type='button'][contains(.,'Incluir')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:07.599" endtime="20231002 11:39:07.884"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-default btn-cancel'][contains(.,'Cancelar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:07.893" level="INFO">Clicking button '//button[@class='btn btn-default btn-cancel'][contains(.,'Cancelar')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:07.887" endtime="20231002 11:39:08.186"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//td[@class='ng-binding'][contains(.,'Tabela de testes')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:39:08.241" level="INFO">Element '//td[@class='ng-binding'][contains(.,'Tabela de testes')]' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:39:08.189" endtime="20231002 11:39:08.243"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//a[@title='Editar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:08.251" level="INFO">Clicking element '//a[@title='Editar']'.</msg>
+<status status="PASS" starttime="20231002 11:39:08.245" endtime="20231002 11:39:08.606"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>locator=//span[@class='label label-lg label-primary mx-1 ng-binding ng-scope'][contains(.,'01:30 às 02:00')]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20231002 11:39:08.637" level="INFO">Element '//span[@class='label label-lg label-primary mx-1 ng-binding ng-scope'][contains(.,'01:30 às 02:00')]' did not exist.</msg>
+<status status="PASS" starttime="20231002 11:39:08.610" endtime="20231002 11:39:08.639"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-default btn-cancel'][contains(.,'Cancelar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:08.649" level="INFO">Clicking button '//button[@class='btn btn-default btn-cancel'][contains(.,'Cancelar')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:08.642" endtime="20231002 11:39:08.928"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:06.219" endtime="20231002 11:39:08.930"/>
+</kw>
+<kw name="Remover tabela de horário" library="automationOperusResources">
+<kw name="Set Variable" library="BuiltIn">
+<var>${Presente}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231002 11:39:08.945" level="INFO">${Presente} = True</msg>
+<status status="PASS" starttime="20231002 11:39:08.940" endtime="20231002 11:39:08.947"/>
+</kw>
+<while condition="${Presente} is True">
+<iter>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Presente}</var>
+<arg>Verificar se as tabelas existem</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Verificar se as tabelas existem" library="automationOperusResources">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=(//a[@title='Excluir'])</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:39:09.063" level="INFO">Element '(//a[@title='Excluir'])' is displayed.</msg>
+<status status="PASS" starttime="20231002 11:39:08.965" endtime="20231002 11:39:09.066"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:08.960" endtime="20231002 11:39:09.070"/>
+</kw>
+<msg timestamp="20231002 11:39:09.073" level="INFO">${Presente} = True</msg>
+<status status="PASS" starttime="20231002 11:39:08.955" endtime="20231002 11:39:09.075"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Presente} is True</arg>
+<arg>Apagar tabelas</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Apagar tabelas" library="automationOperusResources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=(//a[@title='Excluir'])</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:09.104" level="INFO">Clicking element '(//a[@title='Excluir'])'.</msg>
+<status status="PASS" starttime="20231002 11:39:09.093" endtime="20231002 11:39:09.381"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary btn-save'][contains(.,'Confirmar')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231002 11:39:09.384" endtime="20231002 11:39:09.422"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary btn-save'][contains(.,'Confirmar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231002 11:39:09.428" level="INFO">Clicking button '//button[@class='btn btn-primary btn-save'][contains(.,'Confirmar')]'.</msg>
+<status status="PASS" starttime="20231002 11:39:09.423" endtime="20231002 11:39:09.681"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:09.086" endtime="20231002 11:39:09.682"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:09.079" endtime="20231002 11:39:09.684"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Presente} is False</arg>
+<arg>Log</arg>
+<arg>message=Is False</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231002 11:39:09.687" endtime="20231002 11:39:09.693"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:08.949" endtime="20231002 11:39:09.694"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Presente}</var>
+<arg>Verificar se as tabelas existem</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Verificar se as tabelas existem" library="automationOperusResources">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=(//a[@title='Excluir'])</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231002 11:39:09.934" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-81.png"&gt;&lt;img src="selenium-screenshot-81.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231002 11:39:09.934" level="FAIL">Element with locator '(//a[@title='Excluir'])' not found.</msg>
+<status status="FAIL" starttime="20231002 11:39:09.710" endtime="20231002 11:39:09.937"/>
+</kw>
+<status status="FAIL" starttime="20231002 11:39:09.704" endtime="20231002 11:39:09.938"/>
+</kw>
+<msg timestamp="20231002 11:39:09.938" level="INFO">${Presente} = False</msg>
+<status status="PASS" starttime="20231002 11:39:09.700" endtime="20231002 11:39:09.939"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Presente} is True</arg>
+<arg>Apagar tabelas</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231002 11:39:09.939" endtime="20231002 11:39:09.941"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Presente} is False</arg>
+<arg>Log</arg>
+<arg>message=Is False</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>message=Is False</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231002 11:39:09.945" level="INFO">Is False</msg>
+<status status="PASS" starttime="20231002 11:39:09.943" endtime="20231002 11:39:09.945"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:09.941" endtime="20231002 11:39:09.946"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:09.696" endtime="20231002 11:39:09.946"/>
+</iter>
+<status status="PASS" starttime="20231002 11:39:08.948" endtime="20231002 11:39:09.947"/>
+</while>
+<status status="PASS" starttime="20231002 11:39:08.935" endtime="20231002 11:39:09.948"/>
+</kw>
+<kw name="Stop Browser" library="automationOperusResources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231002 11:39:10.055" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-82.png"&gt;&lt;img src="selenium-screenshot-82.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231002 11:39:09.951" endtime="20231002 11:39:10.055"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231002 11:39:10.056" endtime="20231002 11:39:13.401"/>
+</kw>
+<status status="PASS" starttime="20231002 11:39:09.950" endtime="20231002 11:39:13.403"/>
+</kw>
+<doc>Este teste verifica a função de adicionar/editar/remover tabelas de horário
+de acesso da conta</doc>
+<tag>timetable</tag>
+<status status="PASS" starttime="20231002 11:38:45.736" endtime="20231002 11:39:13.407"/>
+</test>
+<doc>Essa suite testa o Operus</doc>
+<status status="PASS" starttime="20231002 11:38:45.103" endtime="20231002 11:39:13.418"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">timetable</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="automationOperus">automationOperus</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

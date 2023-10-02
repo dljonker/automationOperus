@@ -25,3 +25,18 @@ Licence Tests
     [Tags]    licence
     Licence Page
     Licence Manipulation
+    # Refazer separando os testes
+
+Account TimeSchedule Tests
+    [Documentation]    Este teste verifica a função de adicionar/editar/remover tabelas de horário
+    ...    de acesso da conta
+    [Tags]    timetable
+    Login Page Local
+    Account Access Page "1000"
+    TimeSchedule Tab
+    Add TimeSchedule
+    Editar tabela de horário
+    Validar limite de 3 horários
+    Validar faixas conflitantes
+    Validar botão de cancelar
+    Remover tabela de horário
